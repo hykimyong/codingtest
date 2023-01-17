@@ -46,12 +46,26 @@ each element of array A is an integer within the range [1..X].
 
 //위치를 중복없이담을수있을때는 set을 사용한다.
 function solution(X, A) {
-    // Implement your solution here
     const position = new Set();
 
     for(let i = 0; i< A.length; i++){
         position.add(A[i]);
         if(position.size === X){
+            return i;
+        }
+    }
+    return -1;
+}
+
+//처음에 푼거
+function solution(X, A) {
+    const arr = [...Array(X+1).keys()].slice(1);
+
+    for(let i = 0; i< A.length; i++){
+        if(arr.includes(A[i])){
+            arr.splice(arr.indexOf(A[i]),1);
+        }
+        if(arr.length === 0){
             return i;
         }
     }
