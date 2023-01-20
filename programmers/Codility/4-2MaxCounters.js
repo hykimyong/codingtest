@@ -68,3 +68,27 @@ function solution(N, A) {
 
     return array;
 }
+
+//최대값을 저렇게 Math.max로 구하는게 더빠른가
+function solution(N, A) {
+    const counter = new Array(N).fill(0);
+    let maxCounter = 0;
+    let tmpMaxCounter = 0;
+
+    A.forEach( (item) => {
+      let idx = item - 1;
+      if( item <= N) {
+        counter[idx] = Math.max(counter[idx], maxCounter);
+        counter[idx] += 1;
+        tmpMaxCounter =  Math.max(counter[idx], tmpMaxCounter);
+      }else{
+        maxCounter = tmpMaxCounter;
+      }
+    });
+
+    counter.forEach( (item, idx, arr) => {
+      arr[idx] = Math.max(item, maxCounter);
+    })
+
+      return counter
+}
