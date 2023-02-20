@@ -92,3 +92,36 @@ function solution(A) {
     }
 
 }
+
+//100%answer
+function solution(A) {
+    let answer = [];
+
+    for(let i = 1; i< A.length-1; i++){
+        if(A[i-1] < A[i] && A[i] > A[i+1]){
+            max = i;
+            answer.push(i);
+        }
+    }
+
+    if(answer.length <= 2){
+        return answer.length;
+    }else{
+    //제곱근에서 +1을 한값부터 계싼을 하면 더빠름
+        let maxFlag = parseInt(Math.sqrt(answer[answer.length-1]-answer[0])+1);
+
+        for (let i = maxFlag; i >= 2; i--) {
+            let count = 1;
+            let curPos = answer[0];
+            for (let j = 1; j < answer.length; j++) {
+                if (curPos + i <= answer[j]) {
+                    curPos = answer[j];
+                    count++;
+                }
+            }
+            if (count >= i) return i;
+        }
+
+    }
+
+}
