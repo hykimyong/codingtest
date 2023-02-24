@@ -17,4 +17,19 @@ Assumptions
 - Assume the provided data is correct (all the data  object keys and values are strings).
 - The look of the component won't be evaluated; only its specified functionalities will be tested.
 
+[ 'Zambia', 'Lusaka', 'Portugal', 'Lisboa' ]
+[ 'Zambia', 'Lusaka', 'Mali', 'Bamako', 'Portugal', 'Lisboa' ]
+[
+  'Thailand',      'Bangkok',
+  'Zambia',        'Lusaka',
+  'Mali',          'Bamako',
+  'Greece',        'Athenai',
+  'Portugal',      'Lisboa',
+  'Mauritius',     'Port-Louis',
+  'Malta',         'Valletta',
+  'Liechtenstein', 'Vaduz'
+]
+
+
 */
+
