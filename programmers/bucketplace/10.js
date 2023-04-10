@@ -5,8 +5,6 @@ function solution(height1,height2){
     let answer = 0;
     let temp;
     for(let i = 0; i< height1.length-1; i++){
-        console.log(height1[i],height1[i+1]);
-        console.log( height2[i], height2[i+1]);
         //왼쪽이 더크면 왼쪽값은 오름차순이 아니니 무조건 바꿔줘야함
         if(height1[i] > height1[i+1] || height2[i] > height2[i+1]){
             answer++;
@@ -27,6 +25,5 @@ function solution(height1,height2){
             answer++;
         }
     }
-    console.log(answer);
-    
+    return answer;
 }
