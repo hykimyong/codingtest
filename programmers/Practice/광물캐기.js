@@ -20,5 +20,31 @@ https://school.programmers.co.kr/learn/courses/30/lessons/172927
 
 function solution(picks, minerals) {
     var answer = 0;
+    
+    let mineralCnt = 0;
+    minerals.sort();
+    const tiredArr = [[1,1,1],[5,1,1],[25,5,1]];
+    
+    
+    for(let i = 0; i<3; i++){
+        if(minerals.length===0){
+            break;
+        }
+        while(mineralCnt < picks[i]*5){
+            mineralCnt++;
+            if(minerals.length===0){
+                break;
+            }
+            let shiftMineral = minerals.shift();
+            if(shiftMineral ==='diamond'){
+                answer += tiredArr[i][0];
+            }else if(shiftMineral ==='iron'){
+                answer += tiredArr[i][1];
+            }else{
+                answer += tiredArr[i][2];
+            }
+        }
+        mineralCnt = 0;
+    }
     return answer;
 }
