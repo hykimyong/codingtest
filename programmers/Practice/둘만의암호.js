@@ -13,6 +13,7 @@ a에서 5만큼 뒤에 있는 알파벳은 f지만 [b, c, d, e, f]에서 'b'와 
 
 두 문자열 s와 skip, 그리고 자연수 index가 매개변수로 주어질 때 위 규칙대로 s를 변환한 결과를 
 return하도록 solution 함수를 완성해주세요.
+https://school.programmers.co.kr/learn/courses/30/lessons/155652
 */
 
 function solution(s, skip, index) {

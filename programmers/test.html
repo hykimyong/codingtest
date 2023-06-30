@@ -1,0 +1,23 @@
+<html>
+<body>
+<script>
+    
+    const numbers = [4,3,5,1]
+    const goal = 4;
+    solution(numbers,goal);
+    function solution(numbers,goal){
+        for(let i = 0; i< numbers.length; i++){
+            for(let j = 1; j< numbers.length; j++){
+                if(numbers[i]+numbers[j] === goal){
+                    let answer =  [i,j];
+                    console.log(answer);
+                    return;
+                }
+            }
+        }
+    }
+    
+</script>
+
+</body>
+</html>
