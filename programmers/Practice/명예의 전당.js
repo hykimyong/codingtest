@@ -10,4 +10,30 @@ k일 다음부터는 출연 가수의 점수가 기존의 명예의 전당 목�
 이 프로그램에서는 매일 "명예의 전당"의 최하위 점수를 발표합니다. 
 예를 들어, k = 3이고, 7일 동안 진행된 가수의 점수가 [10, 100, 20, 150, 1, 100, 200]이라면, 
 명예의 전당에서 발표된 점수는 아래의 그림과 같이 [10, 10, 10, 20, 20, 100, 100]입니다.
+
+https://school.programmers.co.kr/learn/courses/30/lessons/138477
  */
+
+function solution(k, score) {
+    // 명예의 전당 배열
+    const honor = []
+    // 결괏값
+    const result = []
+    // 모든 점수 순회
+    for(let i = 0 ; i < score.length ; i ++) {
+        // 명예의 전당 기본 셋팅
+        if(i < k) {
+            honor.push(score[i])
+        }
+        // 이번 점수가 명예의 전당 최하위 점수보다 큰 경우
+        if(score[i]>Math.min(...honor)) {
+            // 가장 작은 수를 이번 점수와 교체 후 내림차 순 정렬
+            honor.pop()
+            honor.push(score[i])
+            honor.sort((a,b) => b-a)
+        }
+        // 결괏값에 명예의 전당 중 최하위 점수 입력
+        result.push(honor.at(-1))
+    }
+    return result
+}
