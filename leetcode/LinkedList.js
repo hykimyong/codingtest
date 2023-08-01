@@ -4,21 +4,21 @@
  * 출처 : https://www.freecodecamp.org/korean/news/implementing-a-linked-list-in-javascript/
  * 
  */
-const list = {
-    head: {
-        value: 6,
-        next: {
-            value: 10,                                        
-            next: {
-                value: 12,
-                next: {
-                    value: 3,
-                    next: null	
-                }
-            }
-        }
-    }
-}
+// const list = {
+//     head: {
+//         value: 6,
+//         next: {
+//             value: 10,                                        
+//             next: {
+//                 value: 12,
+//                 next: {
+//                     value: 3,
+//                     next: null	
+//                 }
+//             }
+//         }
+//     }
+// }
 
 class ListNode {
     constructor(data) {
@@ -37,4 +37,6 @@ let node1 = new ListNode(2);
 let node2 = new ListNode(5);
 node1.next = node2;
 
-console.log(node2);
+let list = new LinkedList(node1);
+
+console.log(list.head.next.data);
